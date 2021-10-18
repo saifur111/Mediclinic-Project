@@ -5,9 +5,16 @@ import AuthProvider from '../../Contexts/AuthProvider';
 import Header from '../Header/Header';
 import Login from '../login/Login';
 import Register from '../register/Register';
-import Profile from '../profile/Profile';
 import Home from '../home/Home';
-import Work from '../work/Work';
+import NotFound from '../NotFound/NotFound';
+import Footer from '../Footer/Footer';
+import Clinic from '../Clinic/Clinic';
+import Clients from '../Clients/Clients';
+import About from '../About/About';
+import Services from '../Services/Services';
+import Doctors from '../Doctors/Dojtors';
+import Blog from '../Blog/Blog';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 
 const Routes = () => {
@@ -23,22 +30,41 @@ const Routes = () => {
                         <Route path="/home">
                             <Home/>
                         </Route>
+                        <PrivateRoute  path="/doctors">
+                            <Doctors/>
+                        </PrivateRoute >
+                        <PrivateRoute  path="/services">
+                            <Services/>
+                        </PrivateRoute >
+                        <Route path="/blog">
+                            <Blog/>
+                        </Route>
+                        <Route path="/clinic">
+                            <Clinic/>
+                        </Route>
                         <Route path="/login">
                             <Login></Login>
                         </Route>
                         <Route path="/register">
                             <Register></Register>
                         </Route>
-                        <Route path="/me">
-                            <Profile></Profile>
+                        <Route path="/aboutus">
+                            <About></About>
                         </Route> 
-                        <Route path="/apps">
-                            <Work></Work>
+                        <Route path="/clients">
+                            <Clients/>
                         </Route> 
                         {/* <PrivateRoute path="/placeorder">
                         <PlaceOrder></PlaceOrder>
                         </PrivateRoute>*/}
+                        {/* <PrivateRoute path="/booking/:serviceId">
+                            <Booking></Booking>
+                        </PrivateRoute> */}
+                        <Route path="*">
+                            <NotFound></NotFound>
+                        </Route>
                     </Switch>
+                    <Footer/>
                 </BrowserRouter>
             </AuthProvider>   
         </div>

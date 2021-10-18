@@ -1,4 +1,5 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
 import './home.css';
 // import Sidebar from '../../components/sidebar/Sidebar';
 // import Feed from '../../components/feed/Feed';
@@ -7,8 +8,9 @@ import './home.css';
 const Home = () => {
     return (
         <>
-            <div className="container-fluid">
-                <div className="homeContainer container">
+            <div className="">
+                <div className="homeContainer">
+                    <Banner/>
                     {/* <Sidebar/>
                     <Feed/>
                     <Rightbar/> */}

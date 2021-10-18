@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
+import l1 from '../../images/l2.png'
 
 const Header = () => {
     const {user,logOut,username}=useAuth();
     return (
         <div>
-            <nav className="navbar fixed-top navbar-expand-lg navbar">
+            <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
                     <Link className="navbar-brand" to="/" href="#">
-                       Health Care
+                    <img src={l1} alt="" width="120" />
                     </Link>
                     <div className="d-flex">
                         
@@ -29,41 +30,41 @@ const Header = () => {
                             <li className="nav-item">
                                 <div className="d-flex flex-column  justify-content-center align-items-center">
                                     
-                                    <Link className="nav-link" to="/network">My Network</Link>
+                                    <Link className="nav-link" to="/doctors">Doctors</Link>
                                 </div>
                                 
                             </li>
                             <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                     
-                                    <Link className="nav-link" to="/jobs">Jobs</Link>   
+                                    <Link className="nav-link" to="/services">Services</Link>   
                                 </div>
                                 
                             </li>
                             <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                     
-                                    <Link className="nav-link" to="/chat">Chat</Link> 
+                                    <Link className="nav-link" to="/blog">Blog</Link> 
                                 </div>
                                 
                             </li>
                             <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                     
-                                    <Link className="nav-link" to="/notification">Notification</Link>   
+                                    <Link className="nav-link" to="/clinic">Our Clinic</Link>   
                                 </div>
                                 
                             </li>
                             <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                <Link to="/me" className="nav-link">Me</Link>   
+                                <Link to="/aboutus" className="nav-link">About Us</Link>   
                                 </div>
                                 
                             </li>
                             <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                    
-                                <Link to="/apps" className="nav-link" >Work</Link>   
+                                <Link to="/clients" className="nav-link" >Our Clients</Link>   
                                 </div>
                                 
                             </li>

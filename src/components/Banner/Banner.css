@@ -1,0 +1,31 @@
+.banner-h1{
+    color: black;
+    font-size: 60px;
+    font-weight: 700;
+}
+.banner-h1:hover{
+    font-weight: 600;
+}
+.banner-p{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+.banner-p:hover{
+    color: lightslategray;
+}
+
+.dicon{
+   justify-content: space-between;
+}
+.dblock{
+   width: 50px;
+   height: 50px;
+   margin: 10px;
+
+}
+.dblock:hover{
+    border: 2px solid black;
+    border-radius: 5px;
+    opacity: 0.8;
+}

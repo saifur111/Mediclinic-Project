@@ -1,7 +1,10 @@
 
+import Button from "@restart/ui/esm/Button";
+import { FloatingLabel, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import "./login.css";
+import imlogo from '../../images/l1.png';
 
 const Login=()=> {
   const {signInWithGoogle,signInWithPasswordEmail,setEmail,setPassword}= useAuth();
@@ -13,34 +16,37 @@ const Login=()=> {
         setPassword(e.target.value);
     }
   return (
-    <div className="login">
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">Health Care</h3>
+    <>
+    <div className="login m-lg-5">
+      <div className="loginWrapper ms-0 me-0">
+          <img className="limg loginLogo" src={imlogo} alt="" />
           <span className="loginDesc">
-            Connect with friends and the world around you on Lamasocial.
+            Log In Please
           </span>
-        </div>
-        <div className="loginRight">
-          <div className="loginBox">
-            <form onSubmit={signInWithPasswordEmail}>
-              <input onBlur={handeleEmail} placeholder="Email" className="loginInput" required/>
-              <input onBlur={handelePassword} placeholder="Password" className="loginInput" required/>
-              <button type='submit' className="loginButton">Log In</button>
-            </form>
-            
-            <span className="loginForgot">Forgot Password?</span>
-            <Link className="text-decoration-none" to='/register'><h5 className="text-primary text-center ">
+          <Form onSubmit={signInWithPasswordEmail}>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mb-3"
+              >
+              <Form.Control onBlur={handeleEmail} type="email" placeholder="name@example.com" required />
+              </FloatingLabel>
+              <FloatingLabel controlId="floatingPassword" label="Password">
+                <Form.Control onBlur={handelePassword} type="password" placeholder="Password" required />
+              </FloatingLabel>
+              <Button type='submit' className="btn btn-outline-info mt-2 mb-2 w-50">Log In</Button>
+          </Form>
+          
+          <span className="loginForgot">Forgot Password?</span>
+            <Link className="text-decoration-none" to='/register'><h5 className="text-primary text-center mt-2 mb-2">
               Create a New Account
             </h5></Link>
-            
-            <button  to='/register' onClick={signInWithGoogle} className="loginRegisterButton">
+            <Button  to='/register' onClick={signInWithGoogle} className="btn btn-outline-info mt-2 mb-2">
               Google SignIn
-            </button>
-          </div>
+            </Button>
         </div>
-      </div>
     </div>
+    </>
   );
 }
 export default Login;
