@@ -1,4 +1,4 @@
-import { getAuth,updateProfile, signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider, signOut,onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider, signOut,onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initFirebaseAuth from "../components/Firebase/firebase.init";
 
@@ -9,8 +9,10 @@ const useFirebase =()=>{
     const [user,setUser]=useState({});
     const [error , setError]=useState('');
     const [username,setUsername]=useState('');
-  const [email,setEmail]=useState('');
-  const [password,setPassword]=useState('');
+    const [email,setEmail]=useState('');
+    const [password,setPassword]=useState('');
+    
+
 
     const auth = getAuth();
      //SignIn With Google
@@ -25,21 +27,26 @@ const useFirebase =()=>{
 
     }
      // SignIn With Password & Email
-    // const signInWithPasswordEmail =()=>{
-    //     const googleProvider = new GoogleAuthProvider();
-    //     signInWithEmailAndPassword(auth, email, password)
-    //         .then((result) => {
-    //             setUser(result.user);
-    //             const user = userCredential.user;
-    //             // console.log(result.user); 
-    //         });
+    const signInWithPasswordEmail =(e)=>{
 
-    // }
+        e.preventDefault();
+        console.log(email,"   ",password); 
+        signInWithEmailAndPassword(auth, email, password)
+        .then((result) => {
+            const user = result.user;
+            setError('');
+            console.log(user," click"); 
+        }).catch(error=>{
+            setError(error.message);
+        })
+
+    }
     // create user With Password & Email
     const createInWithPasswordEmail =(e)=>{
         e.preventDefault();
         if(password.length<6){
             setError('Password Length Must Be At Least 6 Characters Long');
+            return;
         }
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -71,7 +78,10 @@ const useFirebase =()=>{
         createInWithPasswordEmail,
         setUsername,
         setEmail,
-        setPassword
+        setPassword,
+        username,
+        signInWithPasswordEmail,
+
     }
 }
 export default useFirebase;

@@ -30,8 +30,8 @@ const Register=()=> {
           <form onSubmit={createInWithPasswordEmail}>
 
               <input onBlur={handeleUsername} placeholder="Username" className="loginInput" required/>
-              <input onBlur={handeleEmail} placeholder="Email" className="loginInput" required/>
-              <input onBlur={handelePassword} placeholder="Password" className="loginInput" required/>
+              <input onBlur={handeleEmail} type='email' placeholder="Email" className="loginInput" required/>
+              <input onBlur={handelePassword} type='password' placeholder="Password" className="loginInput" required/>
               <p className="text-danger text-center m-2 p-2">{error}</p>
               <button type='submit' className="loginButton">Sign Up</button>
             

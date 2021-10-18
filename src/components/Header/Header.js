@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
-    const {user,logOut}=useAuth();
+    const {user,logOut,username}=useAuth();
     return (
         <div>
             <nav className="navbar fixed-top navbar-expand-lg navbar">
@@ -73,6 +73,10 @@ const Header = () => {
                         {
                             user?.email?
                              <small className="btn btn-outline-info text-center" >{user.displayName}</small>:<></>
+                        }
+                        {
+                            user?.displayName ===''?
+                             <small className="btn btn-outline-info text-center" >{username}</small>:<></>
                         }
                         
                         {
