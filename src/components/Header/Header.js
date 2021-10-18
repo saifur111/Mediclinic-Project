@@ -6,7 +6,7 @@ const Header = () => {
     const {user,logOut}=useAuth();
     return (
         <div>
-            <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <nav className="navbar fixed-top navbar-expand-lg navbar">
                 <div className="container">
                     <Link className="navbar-brand" to="/" href="#">
                        Health Care
@@ -72,11 +72,17 @@ const Header = () => {
                     <div className="d-flex">
                         {
                             user?.email?
-                            <Link to="/login"className="btn btn-outline-info m-2 p-2" onClick={logOut} type="button">Logout</Link>:
-                            <Link to="/login"className="btn btn-outline-info m-2 p-2" type="button">Login</Link>
+                             <small className="btn btn-outline-info text-center" >{user.displayName}</small>:<></>
                         }
                         
-                        <Link to="/register" className="btn btn-outline-info m-2 p-2" type="button">Register</Link>
+                        {
+                           
+                            user?.email?
+                            <Link to="/login" className="btn btn-outline-info m-2 p-2" type="button" onClick={logOut} ><i className="fas fa-sign-out-alt"></i></Link>:
+                            <Link to="/login" className="btn btn-outline-info m-2 p-2" type="button" ><i className="fas fa-sign-in-alt"></i></Link>
+                        }
+                        
+                        <Link to="/register" className="btn btn-outline-info m-2 p-2" type="button"><i className="fas fa-user-plus"></i></Link>
                     </div>
                 </div>
             </nav>

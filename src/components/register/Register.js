@@ -1,7 +1,20 @@
 import "./register.css";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
-export default function Register() {
+const Register=()=> {
+  const {error,createInWithPasswordEmail,setUsername,setEmail,setPassword}=useAuth();
+  
+  const handeleUsername=(e)=>{
+      setUsername(e.target.value);
+  }
+  const handeleEmail=(e)=>{
+      setEmail(e.target.value);
+  }
+  const handelePassword=(e)=>{
+      setPassword(e.target.value);
+  }
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -13,11 +26,18 @@ export default function Register() {
         </div>
         <div className="loginRight">
           <div className="loginBox">
-            <input placeholder="Username" className="loginInput" />
-            <input placeholder="Email" className="loginInput" />
-            <input placeholder="Password" className="loginInput" />
-            <input placeholder="Password Again" className="loginInput" />
-            <button className="loginButton">Sign Up</button>
+
+          <form onSubmit={createInWithPasswordEmail}>
+
+              <input onBlur={handeleUsername} placeholder="Username" className="loginInput" required/>
+              <input onBlur={handeleEmail} placeholder="Email" className="loginInput" required/>
+              <input onBlur={handelePassword} placeholder="Password" className="loginInput" required/>
+              <p className="text-danger text-center m-2 p-2">{error}</p>
+              <button type='submit' className="loginButton">Sign Up</button>
+            
+            </form>
+            
+            
             <Link className="text-decoration-none" to='/login'><h5 className="text-primary text-center ">
             Go Login Page
             </h5></Link>
@@ -25,5 +45,8 @@ export default function Register() {
         </div>
       </div>
     </div>
+    
   );
+ 
 }
+export default  Register;
