@@ -23,7 +23,7 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption className='pt-0'>
-                        <h1 className='banner-h1'>Web Doctors Online Treatments</h1>
+                        <h1 className='banner-h1'>Web Doctors Online Treatments Here</h1>
                         <p className='banner-p'>Making it easy to see a doctor online, right now.</p>
                         <div className="dicon">
                             <img

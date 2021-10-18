@@ -1,5 +1,7 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import Features from './Features';
+import Features1 from './Features1';
 import './home.css';
 // import Sidebar from '../../components/sidebar/Sidebar';
 // import Feed from '../../components/feed/Feed';
@@ -11,6 +13,8 @@ const Home = () => {
             <div className="">
                 <div className="homeContainer">
                     <Banner/>
+                    <Features/>
+                    <Features1/>
                     {/* <Sidebar/>
                     <Feed/>
                     <Rightbar/> */}

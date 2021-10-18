@@ -2,7 +2,7 @@ import React from 'react';
 import './footer.css';
 import { Link } from 'react-router-dom';
 import imgbg from '../../images/fimg.jpg';
-import l1 from '../../images/l1.png'
+import l1 from '../../images/l1.png';
 
 const Footer = () => {
     return (
@@ -64,7 +64,7 @@ const Footer = () => {
                     <button className='btnsi m-2'>SUSCRIBE</button>
                 </div>
             </div>  
-            <h6 className="f-h6 m-3">&copy; 2021-MediClinic.Develop By : Md Saifur Rahman</h6>                     
+            <h6 className="f-h6 m-3 text-center ">&copy; 2021-MediClinic.Develop By : Md Saifur Rahman</h6>                     
         </div>
     </div>
     );

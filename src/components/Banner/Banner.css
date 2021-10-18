@@ -4,7 +4,7 @@
     font-weight: 700;
 }
 .banner-h1:hover{
-    font-weight: 600;
+    color: rgb(199, 133, 108);
 }
 .banner-p{
     color: black;
