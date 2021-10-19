@@ -34,10 +34,10 @@ const Login=()=> {
               <FloatingLabel controlId="floatingPassword" label="Password">
                 <Form.Control onBlur={handelePassword} type="password" placeholder="Password" required />
               </FloatingLabel>
-              <Button type='submit' className="btn btn-outline-info mt-2 mb-2 w-50">Log In</Button>
+              <Button type='submit' className="btn btn-outline-info mt-2 me-lg-2 mb-2 w-50">Log In</Button>
               <span onClick={resetPassword} className="btn btn-outline-info">Forgot?</span>
           </Form>
-            <Link className="text-decoration-none" to='/register'><h5 className="text-primary text-center mt-2 mb-2">
+            <Link className="text-decoration-none ms-lg-2" to='/register'><h5 className="text-primary text-center mt-2 mb-2">
               Create a New Account
             </h5></Link>
             <Button  to='/register' onClick={signInWithGoogle} className="btn btn-outline-info mt-2 mb-2">

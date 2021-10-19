@@ -18,7 +18,7 @@ const Services = () => {
         <>
             <div className="">
                     <img src={imgbg} className="w-100" alt="" />
-                </div>Blog Articles by Web Doctors
+                </div>
             <div className='m-lg-5 p-lg-5'>
                 <h1 className="text-info text-center mt-lg-3 mb-lg-3">Our services</h1>
                 <div className="service-container container">

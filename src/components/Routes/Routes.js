@@ -36,7 +36,7 @@ const Routes = () => {
                         <PrivateRoute  path="/services">
                             <Services/>
                         </PrivateRoute >
-                        <Route path="/blog">
+                        <Route path="/blog/:key">
                             <Blog/>
                         </Route>
                         <Route path="/clinic">

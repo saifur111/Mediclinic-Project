@@ -12,6 +12,7 @@ const useFirebase =()=>{
     const [username,setUsername]=useState('');
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
+    const [loading,setLoading]=useState(true);
 
 
     const location = useLocation();
@@ -27,6 +28,8 @@ const useFirebase =()=>{
                 setUser(result.user);
                 history.push(redirect_url);
                 // console.log(result.user); 
+            }).finally(()=>{
+                setLoading(false);
             });
         
 
@@ -68,6 +71,7 @@ const useFirebase =()=>{
             } else {
                setUser({});
             }
+            setLoading(false);
           });
           return ()=> unsub;
     },[auth])
@@ -94,9 +98,12 @@ const useFirebase =()=>{
           });
     }
     const logOut =()=>{
+        setLoading(true);
         signOut(auth).then(() => {
-            
-          });
+            setUser({});
+          }).finally(()=>{
+            setLoading(false);
+        });
     }
     return {
         user,
@@ -109,7 +116,8 @@ const useFirebase =()=>{
         setPassword,
         username,
         signInWithPasswordEmail,
-        resetPassword
+        resetPassword,
+        loading
 
     }
 }

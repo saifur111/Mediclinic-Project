@@ -41,13 +41,13 @@ const Header = () => {
                                 </div>
                                 
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                     
                                     <Link className="nav-link" to="/blog">Blog</Link> 
                                 </div>
                                 
-                            </li>
+                            </li> */}
                             {/* <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                     

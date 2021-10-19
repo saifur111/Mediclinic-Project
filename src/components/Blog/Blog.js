@@ -1,14 +1,37 @@
 import Button from '@restart/ui/esm/Button';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Blog.css';
 import { Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import banner1 from '../../images/about.jpg';
+import { useParams } from 'react-router';
+
 
 const Blog = () => {
+    
+    const {key} = useParams();
+    const [services, setServices] = useState([]);
+
+    const [singleService,setSingleService]=useState({});
+    // const {id,name,header}=singleService;
+    useEffect(() => {
+        fetch('./demo.json')
+            .then(res => res.json())
+            .then(data => setServices(data));
+    }, []);
+    // console.log(typeof(singleService));
+    // console.log(singleService);
+    // console.log(name);
+    // console.log(header);
+    useEffect(()=>{
+        const found=  services.find(service=>service.id===parseInt(key));
+        // console.log(found)
+        setSingleService(found);
+        },[services])
     return (
 
         <>
+        
         <Carousel className='mt-lg-5 pt-lg-2'>
                 <Carousel.Item>
                     <img
@@ -17,7 +40,7 @@ const Blog = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption className='pt-0'>
-                        <h1 className='banner-h1'>Blog Article  Web Doctors</h1>
+                        <h1 className='banner-h1'>Hi ,I Am { singleService?.name }</h1>
                         <p className='banner-p'>Making it easy to see a doctor online, right now.</p>
                         <Link className='btn btn-outline-dark m-2 p-2' to="/">CONSULT ME NOW</Link> 
                     </Carousel.Caption>
@@ -43,6 +66,11 @@ const Blog = () => {
                 <Link to="/"><Button  className="btn btn-outline-info ">Go Home<span className="btn-outline-dark"><i className="fas fa-chevron-right"></i></span></Button></Link>   
                 </div>
             </div>
+            <div className='mt-lg-5 pt-lg-2 text-danger'>
+            {
+                singleService?.id
+            }
+        </div>
         </>
         
     );
