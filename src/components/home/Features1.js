@@ -156,7 +156,7 @@ const Features1 = () => {
                     </div>
             </div>
         </div>
-        <div className="m-5 h-w left">
+        <div className="container m-5 h-w ">
             <button className="btn btn-outline-info">Learn More <span className="btn-outline-dark"><i className="fas fa-chevron-right"></i></span></button> 
         </div>
         </>

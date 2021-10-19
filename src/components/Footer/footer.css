@@ -2,6 +2,7 @@
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    border-top:2px solid black ;
 }
 .f-h4{
     color: rgb(211, 125, 20);
