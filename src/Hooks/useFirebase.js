@@ -21,6 +21,7 @@ const useFirebase =()=>{
     const redirect_urllog = location.state?.from ||'/login';
 
     const auth = getAuth();
+
      //SignIn With Google
     const signInWithGoogle =()=>{
         const googleProvider = new GoogleAuthProvider();
@@ -120,7 +121,6 @@ const useFirebase =()=>{
         signInWithPasswordEmail,
         resetPassword,
         loading
-
     }
 }
 export default useFirebase;

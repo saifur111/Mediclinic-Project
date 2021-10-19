@@ -29,9 +29,9 @@ const About =()=> {
                 </Carousel.Item>
             </Carousel>
             <div className="container d-flex my-5 bg-light">
-            <div class="row row-cols-3 gy-2 ">
-                <div class="row row-cols-12">
-                    <div class="col d-flex">
+            <div className="row row-cols-3 gy-2 ">
+                <div className="row row-cols-12">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip1}alt="" />
                         <div>
                             <h6 className="bg-h6">Board Certified Doctors</h6>
@@ -39,7 +39,7 @@ const About =()=> {
                         </div>
                     </div>
 
-                    <div class="col d-flex">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip2}alt="" />
                         <div>
                             <h6 className="bg-h6">Highly Rated Doctors</h6>
@@ -47,20 +47,20 @@ const About =()=> {
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-12">
-                    <div class="col d-flex">
+                <div className="row row-cols-12">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip3}alt="" />
                         <div>
                             <h6 className="bg-h6">Quality Care</h6>
-                            <p>Average doctor consultation:
+                            <h6>Average doctor consultation:
                               <ul>
                                 <li>MDLive - Tk 82</li>
                                 <li>Teladoc - Tk 75</li>
                                 </ul>for common conditions.
-                              </p>
+                              </h6>
                         </div>
                     </div>
-                    <div class="col d-flex">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip4}alt="" />
                         <div>
                             <h6 className="bg-h6">Substantial Savings</h6>
@@ -68,8 +68,8 @@ const About =()=> {
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-12">
-                <div class="col d-flex">
+                <div className="row row-cols-12">
+                <div className="col d-flex">
                         <img className="bg-w2" src={ip5}alt="" />
                         <div>
                             <h6 className="bg-h6">
@@ -77,7 +77,7 @@ No Risk Money </h6>
                             <p>Lorem ipsum dolor sit amet, cons ectetuer. Proin gravida nibh vel velit auctor aliquet aenean</p>
                         </div>
                     </div>
-                    <div class="col d-flex">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip6}alt="" />
                         <div>
                             <h6 className="bg-h6">Cardiac Clinic</h6>

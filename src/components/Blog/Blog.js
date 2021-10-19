@@ -1,32 +1,30 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import './Blog.css';
-import { Carousel } from 'react-bootstrap';
+import { Card, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import banner1 from '../../images/about.jpg';
 import { useParams } from 'react-router';
+import img16 from '../../images/ia_700000130.jpg';
+
 
 
 const Blog = () => {
     
     const {key} = useParams();
     const [services, setServices] = useState([]);
-
     const [singleService,setSingleService]=useState({});
-    // const {id,name,header}=singleService;
+    // console.log(singleService);
     useEffect(() => {
-        fetch('./demo.json')
+        fetch('demo.json')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
-    // console.log(typeof(singleService));
-    // console.log(singleService);
-    // console.log(name);
-    // console.log(header);
+
     useEffect(()=>{
         const found=  services.find(service=>service.id===parseInt(key));
-        // console.log(found)
         setSingleService(found);
+        
         },[services])
     return (
 
@@ -40,13 +38,25 @@ const Blog = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption className='pt-0'>
-                        <h1 className='banner-h1'>Hi ,I Am { singleService?.name }</h1>
+                        <h1 className='banner-h1'>Hi ,I Am "Failed To View Dynamic Name"</h1>:<></>
                         <p className='banner-p'>Making it easy to see a doctor online, right now.</p>
                         <Link className='btn btn-outline-dark m-2 p-2' to="/">CONSULT ME NOW</Link> 
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
             <div className="container my-lg-5">
+            <div className="service m-lg-2 p-lg-2">
+            <Card>
+                <Card.Img variant="top" src={img16} />
+                    <Card.Body>
+                        <Card.Title>I Failed !</Card.Title>
+                        <Card.Footer className="">
+                            <Card.Text>I Failed !</Card.Text>
+                        </Card.Footer>
+                        
+                    </Card.Body>
+            </Card>
+            </div>
                 <div className="m-lg-2 p-lg-2">
                     
                     <h1 className="m-lg-2 p-lg-2">Getting a Prescription Online</h1>
@@ -67,9 +77,6 @@ const Blog = () => {
                 </div>
             </div>
             <div className='mt-lg-5 pt-lg-2 text-danger'>
-            {
-                singleService?.id
-            }
         </div>
         </>
         

@@ -29,20 +29,20 @@ const Register=()=> {
           </span>
           <Form onSubmit={createInWithPasswordEmail}>
               <FloatingLabel
-                controlId="floatingInput"
+                
                 label="User Name"
                 className="mb-3"
               >
               <Form.Control onBlur={handeleUsername} type="text" placeholder="Username" required />
               </FloatingLabel>
               <FloatingLabel
-                controlId="floatingInput"
+                
                 label="Email address"
                 className="mb-3"
               >
               <Form.Control onBlur={handeleEmail} type="email" placeholder="name@example.com" required />
               </FloatingLabel>
-              <FloatingLabel controlId="floatingPassword" label="Password">
+              <FloatingLabel  label="Password">
                 <Form.Control onBlur={handelePassword} type="password" placeholder="Password" required />
               </FloatingLabel>
               <p className="text-danger text-center m-2 p-2">{error}</p>

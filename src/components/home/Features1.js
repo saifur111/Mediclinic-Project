@@ -38,45 +38,45 @@ const Features1 = () => {
                 <h1>Finest Patient</h1>
                 <h1>Care & Amenities</h1>
                 <div className="m-5">
-                    <div class="row row-cols-4 gy-2 ">
-                        <div class="col"><img className="bg-w" src={img1}alt="" />
+                    <div className="row row-cols-4 gy-2 ">
+                        <div className="col"><img className="bg-w" src={img1}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img2}alt="" />
+                        <div className="col"><img className="bg-w" src={img2}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img3}alt="" />
+                        <div className="col"><img className="bg-w" src={img3}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img4}alt="" />
+                        <div className="col"><img className="bg-w" src={img4}alt="" />
                         </div>
                     </div>
 
-                    <div class="row row-cols-4">
-                        <div class="col"><img className="bg-w" src={img5}alt="" />
+                    <div className="row row-cols-4">
+                        <div className="col"><img className="bg-w" src={img5}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img6}alt="" />
+                        <div className="col"><img className="bg-w" src={img6}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img7}alt="" />
+                        <div className="col"><img className="bg-w" src={img7}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img8}alt="" />
-                        </div>
-                    </div>
-                    <div class="row row-cols-4">
-                        <div class="col"><img className="bg-w" src={img9}alt="" />
-                        </div>
-                        <div class="col"><img className="bg-w" src={img10}alt="" />
-                        </div>
-                        <div class="col"><img className="bg-w" src={img11}alt="" />
-                        </div>
-                        <div class="col"><img className="bg-w" src={img12}alt="" />
+                        <div className="col"><img className="bg-w" src={img8}alt="" />
                         </div>
                     </div>
-                    <div class="row row-cols-4">
-                        <div class="col"><img className="bg-w" src={img13}alt="" />
+                    <div className="row row-cols-4">
+                        <div className="col"><img className="bg-w" src={img9}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img14}alt="" />
+                        <div className="col"><img className="bg-w" src={img10}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img15}alt="" />
+                        <div className="col"><img className="bg-w" src={img11}alt="" />
                         </div>
-                        <div class="col"><img className="bg-w" src={img16}alt="" />
+                        <div className="col"><img className="bg-w" src={img12}alt="" />
+                        </div>
+                    </div>
+                    <div className="row row-cols-4">
+                        <div className="col"><img className="bg-w" src={img13}alt="" />
+                        </div>
+                        <div className="col"><img className="bg-w" src={img14}alt="" />
+                        </div>
+                        <div className="col"><img className="bg-w" src={img15}alt="" />
+                        </div>
+                        <div className="col"><img className="bg-w" src={img16}alt="" />
                         </div>
                     </div>
                 </div>
@@ -91,9 +91,9 @@ const Features1 = () => {
             
         </div>
         <div className="container d-flex my-5 bg-light">
-            <div class="row row-cols-3 gy-2 ">
-                <div class="row row-cols-12">
-                    <div class="col d-flex">
+            <div className="row row-cols-3 gy-2 ">
+                <div className="row row-cols-12">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip1}alt="" />
                         <div>
                             <h6 className="bg-h6">Cardiac Clinic</h6>
@@ -101,7 +101,7 @@ const Features1 = () => {
                         </div>
                     </div>
 
-                    <div class="col d-flex">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip2}alt="" />
                         <div>
                             <h6 className="bg-h6">Cardiac Clinic</h6>
@@ -109,15 +109,15 @@ const Features1 = () => {
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-12">
-                    <div class="col d-flex">
+                <div className="row row-cols-12">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip3}alt="" />
                         <div>
                             <h6 className="bg-h6">Cardiac Clinic</h6>
                             <p>Lorem ipsum dolor sit amet, cons ectetuer. Proin gravida nibh vel velit auctor aliquet aenean</p>
                         </div>
                     </div>
-                    <div class="col d-flex">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip4}alt="" />
                         <div>
                             <h6 className="bg-h6">Cardiac Clinic</h6>
@@ -125,15 +125,15 @@ const Features1 = () => {
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-12">
-                <div class="col d-flex">
+                <div className="row row-cols-12">
+                <div className="col d-flex">
                         <img className="bg-w2" src={ip5}alt="" />
                         <div>
                             <h6 className="bg-h6">Cardiac Clinic</h6>
                             <p>Lorem ipsum dolor sit amet, cons ectetuer. Proin gravida nibh vel velit auctor aliquet aenean</p>
                         </div>
                     </div>
-                    <div class="col d-flex">
+                    <div className="col d-flex">
                         <img className="bg-w2" src={ip6}alt="" />
                         <div>
                             <h6 className="bg-h6">Cardiac Clinic</h6>
@@ -146,13 +146,13 @@ const Features1 = () => {
         <div className="container my-5">
             <h1 className="text-center my-3 hov">Gallery of Our Clinic</h1>
             <h5 className="text-center my-3">Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo non habent claritatem insitamconsequat duis autem facilisis at vero eros</h5>
-            <div class="row gy-2 ">
-                    <div class="col d-flex">
+            <div className="row gy-2 ">
+                    <div className="col d-flex">
                         <img className="bg-w3" src={bg1}alt="" />
                         <img className="bg-w3 img-fluid" src={bg2}alt="" />
                         <img className="bg-w3" src={bg3}alt="" />
                     </div>
-                    <div class="col d-flex">
+                    <div className="col d-flex">
                         <img className="bg-w3" src={bg4}alt="" />
                         <img className="bg-w3" src={bg5}alt="" />
                         <img className="bg-w3" src={bg6}alt="" />

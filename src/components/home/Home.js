@@ -15,9 +15,6 @@ const Home = () => {
                     <Banner/>
                     <Features/>
                     <Features1/>
-                    {/* <Sidebar/>
-                    <Feed/>
-                    <Rightbar/> */}
                 </div>
             </div>
         </>

@@ -15,8 +15,7 @@ const Service = ({service}) => {
                     <Card.Text>{discription}</Card.Text>
                     <Card.Footer className="">
                         <Card.Text>{date}</Card.Text>
-                        <Link to={`/blog/${id}`}><Button className="btn btn-outline-info">About Me<span className="btn-outline-dark"><i className="fas fa-chevron-right"></i></span></Button></Link>
-                        
+                        <Link to={`/blog/${id}`}><Button className="btn btn-outline-info">My Blog<span className="btn-outline-dark"><i className="fas fa-chevron-right"></i></span></Button></Link>
                     </Card.Footer>
                     
                 </Card.Body>
