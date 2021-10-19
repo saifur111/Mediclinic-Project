@@ -18,6 +18,7 @@ const useFirebase =()=>{
     const location = useLocation();
     const history = useHistory();
     const redirect_url = location.state?.from ||'/home';
+    const redirect_urllog = location.state?.from ||'/login';
 
     const auth = getAuth();
      //SignIn With Google
@@ -59,8 +60,9 @@ const useFirebase =()=>{
             .then((result) => {
                 verifyEmail();
                 setWithUserName();
-                const user = result.user;
-                console.log(user); 
+                history.push(redirect_urllog);
+                // const user = result.user;
+                // console.log(user); 
             });
     }
     // user state change
