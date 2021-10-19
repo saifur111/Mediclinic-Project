@@ -20,8 +20,8 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 const Routes = () => {
     return (
         <div className="">
-            <AuthProvider>
-                <BrowserRouter>
+            <BrowserRouter>
+                <AuthProvider>
                     <Header></Header>
                     <Switch>
                         <Route exact path="/">
@@ -65,8 +65,8 @@ const Routes = () => {
                         </Route>
                     </Switch>
                     <Footer/>
-                </BrowserRouter>
-            </AuthProvider>   
+                </AuthProvider>
+            </BrowserRouter>
         </div>
     );
 };

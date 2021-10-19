@@ -80,7 +80,10 @@ const Features1 = () => {
                         </div>
                     </div>
                 </div>
+                <div className="d-flex justify-content-center">
                 <button className="btn btn-outline-info">Learn More <span className="btn-outline-dark"><i className="fas fa-chevron-right"></i></span></button>
+                </div>
+                
             </div>
             <div className="col-6 ">
                 <img className="w-100" src={imgbg} alt="" />
@@ -156,7 +159,7 @@ const Features1 = () => {
                     </div>
             </div>
         </div>
-        <div className="container m-5 h-w ">
+        <div className="container d-flex justify-content-center m-5 h-w ">
             <button className="btn btn-outline-info">Learn More <span className="btn-outline-dark"><i className="fas fa-chevron-right"></i></span></button> 
         </div>
         </>

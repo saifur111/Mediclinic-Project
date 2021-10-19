@@ -7,7 +7,7 @@ import "./login.css";
 import imlogo from '../../images/l1.png';
 
 const Login=()=> {
-  const {signInWithGoogle,signInWithPasswordEmail,setEmail,setPassword}= useAuth();
+  const {resetPassword,signInWithGoogle,signInWithPasswordEmail,setEmail,setPassword}= useAuth();
 
     const handeleEmail=(e)=>{
         setEmail(e.target.value);
@@ -35,15 +35,15 @@ const Login=()=> {
                 <Form.Control onBlur={handelePassword} type="password" placeholder="Password" required />
               </FloatingLabel>
               <Button type='submit' className="btn btn-outline-info mt-2 mb-2 w-50">Log In</Button>
+              <span onClick={resetPassword} className="btn btn-outline-info">Forgot?</span>
           </Form>
-          
-          <span className="loginForgot">Forgot Password?</span>
             <Link className="text-decoration-none" to='/register'><h5 className="text-primary text-center mt-2 mb-2">
               Create a New Account
             </h5></Link>
             <Button  to='/register' onClick={signInWithGoogle} className="btn btn-outline-info mt-2 mb-2">
               Google SignIn
             </Button>
+            
         </div>
     </div>
     </>

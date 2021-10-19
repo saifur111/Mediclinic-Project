@@ -1,5 +1,6 @@
-import { getAuth, signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider, signOut,onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup,createUserWithEmailAndPassword,sendPasswordResetEmail,signInWithEmailAndPassword, GoogleAuthProvider, signOut,onAuthStateChanged,sendEmailVerification,updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router";
 import initFirebaseAuth from "../components/Firebase/firebase.init";
 
 
@@ -11,8 +12,11 @@ const useFirebase =()=>{
     const [username,setUsername]=useState('');
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
-    
 
+
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_url = location.state?.from ||'/home';
 
     const auth = getAuth();
      //SignIn With Google
@@ -21,6 +25,7 @@ const useFirebase =()=>{
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 setUser(result.user);
+                history.push(redirect_url);
                 // console.log(result.user); 
             });
         
@@ -33,9 +38,8 @@ const useFirebase =()=>{
         console.log(email,"   ",password); 
         signInWithEmailAndPassword(auth, email, password)
         .then((result) => {
-            const user = result.user;
             setError('');
-            console.log(user," click"); 
+            history.push(redirect_url); 
         }).catch(error=>{
             setError(error.message);
         })
@@ -50,6 +54,8 @@ const useFirebase =()=>{
         }
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
+                verifyEmail();
+                setWithUserName();
                 const user = result.user;
                 console.log(user); 
             });
@@ -65,6 +71,28 @@ const useFirebase =()=>{
           });
           return ()=> unsub;
     },[auth])
+
+    // verify Email
+    const verifyEmail=()=>{
+        sendEmailVerification(auth.currentUser)
+        .then(result =>{
+            console.log(result);
+        })
+    }
+    // Set userNmae
+    const setWithUserName=()=>{
+        updateProfile(auth.currentUser, {
+            displayName: username,
+          }).then((result) => {
+
+          });
+    }
+    // Reset Password 
+    const resetPassword =()=>{
+        sendPasswordResetEmail(auth,email).then((result) => {
+
+          });
+    }
     const logOut =()=>{
         signOut(auth).then(() => {
             
@@ -81,6 +109,7 @@ const useFirebase =()=>{
         setPassword,
         username,
         signInWithPasswordEmail,
+        resetPassword
 
     }
 }

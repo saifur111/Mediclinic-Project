@@ -4,7 +4,7 @@ import useAuth from '../../Hooks/useAuth';
 import l1 from '../../images/l2.png'
 
 const Header = () => {
-    const {user,logOut,username}=useAuth();
+    const {user,logOut}=useAuth();
     return (
         <div>
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -23,7 +23,7 @@ const Header = () => {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
-                                    <Link className="nav-link active" aria-current="page" to="/home">Home</Link>  
+                                    <Link className="nav-link" aria-current="page" to="/home">Home</Link>  
                                 </div>
                                 
                             </li>
@@ -48,38 +48,35 @@ const Header = () => {
                                 </div>
                                 
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                     
                                     <Link className="nav-link" to="/clinic">Our Clinic</Link>   
                                 </div>
                                 
-                            </li>
+                            </li> */}
                             <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
                                 <Link to="/aboutus" className="nav-link">About Us</Link>   
                                 </div>
                                 
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                    
                                 <Link to="/clients" className="nav-link" >Our Clients</Link>   
                                 </div>
                                 
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     <div className="d-flex">
+                        <div>
                         {
                             user?.email?
-                             <small className="btn btn-outline-info text-center" >{user.displayName}</small>:<></>
+                             <small className="text-info text-center" >{user.displayName}</small>:<></>
                         }
-                        {
-                            user?.displayName ===''?
-                             <small className="btn btn-outline-info text-center" >{username}</small>:<></>
-                        }
-                        
+                        </div>
                         {
                            
                             user?.email?
